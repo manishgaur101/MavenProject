@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Command line suite" duration-ms="25105" started-at="2020-07-01T18:16:18Z" finished-at="2020-07-01T18:16:43Z">
+    <groups>
+    </groups>
+    <test name="Command line test" duration-ms="25105" started-at="2020-07-01T18:16:18Z" finished-at="2020-07-01T18:16:43Z">
+      <class name="testcases.SanityTest">
+        <test-method status="PASS" signature="sanityTest()[pri:1, instance:testcases.SanityTest@1e461e41]" name="sanityTest" duration-ms="14693" started-at="2020-07-01T18:16:18Z" finished-at="2020-07-01T18:16:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- sanityTest -->
+        <test-method status="PASS" signature="addItemIntoCart()[pri:2, instance:testcases.SanityTest@1e461e41]" name="addItemIntoCart" duration-ms="7843" started-at="2020-07-01T18:16:33Z" depends-on-methods="testcases.SanityTest.sanityTest" finished-at="2020-07-01T18:16:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addItemIntoCart -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:testcases.SanityTest@1e461e41]" name="tearDown" is-config="true" duration-ms="2526" started-at="2020-07-01T18:16:41Z" finished-at="2020-07-01T18:16:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- testcases.SanityTest -->
+    </test> <!-- Command line test -->
+  </suite> <!-- Command line suite -->
+</testng-results>
