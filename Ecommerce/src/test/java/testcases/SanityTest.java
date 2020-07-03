@@ -36,6 +36,7 @@ public class SanityTest extends TestBase{
 	@Test(priority=1,dataProvider="myData")
 	public void Sheet1(Map<String, String> testData){
 		dataSet++;
+		log.info("Data set="+dataSet);
 		if(!testData.get("DataToRun").equalsIgnoreCase("Y")){
 			throw new SkipException("DataToRun for row number "+dataSet+" is No or Blank, "
 					+ "Hence skipping execution for this data set");
