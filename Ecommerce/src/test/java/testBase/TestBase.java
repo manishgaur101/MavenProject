@@ -21,7 +21,7 @@ public class TestBase {
 	Logger log = Logger.getLogger(TestBase.class);
 	public WebDriver driver = BrowserFactory.getInstanceOfBrowserFactory().getDriver();
 	//public WebDriver driver = BrowserFactory.getBrowser();
-	public ExtentTest test = null;
+	public static ExtentTest test;
 	
 	
 	static {

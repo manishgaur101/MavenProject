@@ -1,73 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="1" failed="0" total="2" passed="1">
+<testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="12860" started-at="2020-07-03T12:53:51Z" finished-at="2020-07-03T12:54:04Z">
+  <suite name="Default suite" duration-ms="23107" started-at="2020-07-06T12:41:58Z" finished-at="2020-07-06T12:42:21Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="12860" started-at="2020-07-03T12:53:51Z" finished-at="2020-07-03T12:54:04Z">
-      <class name="testcases.SanityTest">
-        <test-method status="PASS" signature="Sheet1(java.util.Map)[pri:0, instance:testcases.SanityTest@3e6104fc]" name="Sheet1" duration-ms="10120" started-at="2020-07-03T18:23:53Z" data-provider="myData" finished-at="2020-07-03T18:24:03Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{UserName=mgaur000@gmail.com, DataToRun=Y, Password=ABC123}]]>
-              </value>
-            </param>
-          </params>
+    <test name="Default test" duration-ms="23107" started-at="2020-07-06T12:41:58Z" finished-at="2020-07-06T12:42:21Z">
+      <class name="testcases.sameOrigin">
+        <test-method status="PASS" signature="f()[pri:0, instance:testcases.sameOrigin@2d209079]" name="f" duration-ms="23074" started-at="2020-07-06T18:11:58Z" finished-at="2020-07-06T18:12:21Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Sheet1 -->
-        <test-method status="SKIP" signature="Sheet1(java.util.Map)[pri:0, instance:testcases.SanityTest@3e6104fc]" name="Sheet1" duration-ms="1" started-at="2020-07-03T18:24:03Z" data-provider="myData" finished-at="2020-07-03T18:24:03Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{UserName=mgaur101@gmail.com, DataToRun=N, Password=bcm}]]>
-              </value>
-            </param>
-          </params>
-          <exception class="org.testng.SkipException">
-            <message>
-              <![CDATA[DataToRun for row number 2 is No or Blank, Hence skipping execution for this data set]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.testng.SkipException: DataToRun for row number 2 is No or Blank, Hence skipping execution for this data set
-	at testcases.SanityTest.Sheet1(SanityTest.java:40)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:663)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:849)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1157)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
-	at org.testng.TestRunner.privateRun(TestRunner.java:771)
-	at org.testng.TestRunner.run(TestRunner.java:621)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:357)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:352)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:310)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:259)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1200)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1125)
-	at org.testng.TestNG.run(TestNG.java:1033)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.testng.SkipException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Sheet1 -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:testcases.SanityTest@3e6104fc]" name="tearDown" is-config="true" duration-ms="1085" started-at="2020-07-03T18:24:03Z" finished-at="2020-07-03T18:24:04Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- testcases.SanityTest -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite -->
+        </test-method> <!-- f -->
+      </class> <!-- testcases.sameOrigin -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

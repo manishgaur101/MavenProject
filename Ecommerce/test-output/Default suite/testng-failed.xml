@@ -6,7 +6,7 @@
       <class name="testcases.SanityTest">
         <methods>
           <include name="tearDown"/>
-          <include name="Sheet1" invocation-numbers="0"/>
+          <include name="Sheet1" invocation-numbers="1"/>
         </methods>
       </class> <!-- testcases.SanityTest -->
     </classes>

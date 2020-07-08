@@ -9,11 +9,17 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="7">Command line suite</th></tr>
-<tr><td><a href="#t0">Command line test</a></td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">25,105</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Command line test</a></td><td class="num">0</td><td class="num attn">1</td><td class="num attn">1</td><td class="num">21,876</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Command line suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Command line test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">testcases.SanityTest</td><td><a href="#m0">addItemIntoCart</a></td><td rowspan="1">1593627393264</td><td rowspan="1">7843</td></tr><tr class="passedeven"><td><a href="#m1">sanityTest</a></td><td rowspan="1">1593627378567</td><td rowspan="1">14693</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Command line suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Command line test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">testcases.SanityTest</td><td><a href="#m0">Sheet1</a></td><td rowspan="1">1593954289720</td><td rowspan="1">5273</td></tr><tr><th colspan="4">Command line test &#8212; skipped</th></tr><tr class="skippedeven"><td rowspan="1">testcases.SanityTest</td><td><a href="#m1">Sheet1</a></td><td rowspan="1">1593954294997</td><td rowspan="1">1</td></tr></tbody>
 </table>
-<h2>Command line test</h2><h3 id="m0">testcases.SanityTest#addItemIntoCart</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">testcases.SanityTest#sanityTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Command line test</h2><h3 id="m0">testcases.SanityTest#Sheet1</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{UserName=mgaur000@gmail.com, DataToRun=Y, Password=ABC123}</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException
+	at commonutil.SeleniumUtil.takeScreenshotandAttachInReport(SeleniumUtil.java:80)
+	at pagefactory.Login.loginApp(Login.java:60)
+	at testcases.SanityTest.Sheet1(SanityTest.java:44)
+... Removed 35 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">testcases.SanityTest#Sheet1</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{UserName=mgaur101@gmail.com, DataToRun=N, Password=bcm}</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.testng.SkipException: DataToRun for row number 2 is No or Blank, Hence skipping execution for this data set
+	at testcases.SanityTest.Sheet1(SanityTest.java:38)
+... Removed 35 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

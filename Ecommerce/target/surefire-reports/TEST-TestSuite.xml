@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="2" failures="0" name="TestSuite" time="22.509" errors="0" skipped="0">
+<testsuite tests="2" failures="1" name="TestSuite" time="5.282" errors="0" skipped="1">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_251\jre\bin"/>
@@ -27,26 +27,24 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="user.variant" value=""/>
     <property name="os.name" value="Windows 7"/>
-    <property name="classworlds.conf" value="C:\opt\apache-maven-3.6.1-bin\apache-maven-3.6.1\bin\..\bin\m2.conf"/>
+    <property name="classworlds.conf" value="D:\Sujoy\myworkspace\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf8508661249331086598.tmp"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_251\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Java\jdk1.8.0_251\bin;C:\opt\apache-maven-3.6.1-bin\apache-maven-3.6.1\bin;C:\Users\manish.gaur\AppData\Roaming\npm;C:\Program Files\nodejs\;C:\Program Files (x86)\MySQL\Connector J 8.0\mysql-connector-java-8.0.16.jar;C:\spring-2.2.6.RELEASE\bin;C:\Users\manish.gaur\AppData\Local\Programs\Python\Python37\Scripts\;C:\Users\manish.gaur\AppData\Local\Programs\Python\Python37\;C:\Users\manish.gaur\AppData\Local\Google\Cloud SDK\google-cloud-sdk\bin;C:\Users\manish.gaur\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\manish.gaur\AppData\Local\Programs\Git\cmd;C:\Users\manish.gaur\AppData\Roaming\npm;."/>
-    <property name="maven.conf" value="C:\opt\apache-maven-3.6.1-bin\apache-maven-3.6.1\bin\../conf"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_251\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jre1.8.0_251/bin/server;C:/Program Files/Java/jre1.8.0_251/bin;C:/Program Files/Java/jre1.8.0_251/lib/amd64;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Java\jdk1.8.0_251\bin;C:\opt\apache-maven-3.6.1-bin\apache-maven-3.6.1\bin;C:\Users\manish.gaur\AppData\Roaming\npm;C:\Program Files\nodejs\;C:\Program Files (x86)\MySQL\Connector J 8.0\mysql-connector-java-8.0.16.jar;C:\spring-2.2.6.RELEASE\bin;C:\Users\manish.gaur\AppData\Local\Programs\Python\Python37\Scripts\;C:\Users\manish.gaur\AppData\Local\Programs\Python\Python37\;C:\Users\manish.gaur\AppData\Local\Google\Cloud SDK\google-cloud-sdk\bin;C:\Users\manish.gaur\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\manish.gaur\AppData\Local\Programs\Git\cmd;C:\Users\manish.gaur\AppData\Roaming\npm;D:\Sujoy\eclipse;;."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="52.0"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="os.version" value="6.1"/>
-    <property name="library.jansi.path" value="C:\opt\apache-maven-3.6.1-bin\apache-maven-3.6.1\bin\..\lib\jansi-native"/>
     <property name="user.home" value="C:\Users\manish.gaur"/>
     <property name="user.timezone" value="Asia/Calcutta"/>
     <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
     <property name="java.specification.version" value="1.8"/>
     <property name="file.encoding" value="Cp1252"/>
     <property name="user.name" value="manish.gaur"/>
-    <property name="java.class.path" value="C:\opt\apache-maven-3.6.1-bin\apache-maven-3.6.1\bin\..\boot\plexus-classworlds-2.6.0.jar"/>
+    <property name="java.class.path" value="/D:/Sujoy/eclipse/plugins/org.eclipse.m2e.maven.runtime_1.6.2.20150902-0001/jars/plexus-classworlds-2.5.2.jar"/>
     <property name="java.vm.specification.version" value="1.8"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_251\jre"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher test"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -B test"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="en"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -55,7 +53,7 @@
     <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.8.0_251\jre\lib\ext;C:\Windows\Sun\Java\lib\ext"/>
     <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_251\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_251\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_251\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_251\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_251\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_251\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_251\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_251\jre\classes"/>
     <property name="java.vendor" value="Oracle Corporation"/>
-    <property name="maven.home" value="C:\opt\apache-maven-3.6.1-bin\apache-maven-3.6.1\bin\.."/>
+    <property name="maven.home" value="D:\Sujoy\myworkspace\GitProject\Ecommerce\EMBEDDED"/>
     <property name="file.separator" value="\"/>
     <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -63,6 +61,31 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="testcases.SanityTest" name="sanityTest" time="14.692"/>
-  <testcase classname="testcases.SanityTest" name="addItemIntoCart" time="7.817"/>
+  <testcase classname="testcases.SanityTest" name="Sheet1" time="5.282">
+    <failure type="java.lang.NullPointerException">java.lang.NullPointerException
+	at commonutil.SeleniumUtil.takeScreenshotandAttachInReport(SeleniumUtil.java:80)
+	at pagefactory.Login.loginApp(Login.java:60)
+	at testcases.SanityTest.Sheet1(SanityTest.java:44)
+</failure>
+    <system-out>Configuring TestNG with: org.apache.maven.surefire.testng.conf.TestNG652Configurator@2437c6dc
+2020-07-05 18:34:49--INFO -testcases.SanityTest-main:Data set=1
+2020-07-05 18:34:49--INFO -testcases.SanityTest-main:Executing Data set number = 1
+2020-07-05 18:34:54--ERROR-pagefactory.Login-main:java.lang.NullPointerException
+</system-out>
+    <system-err>SLF4J: Failed to load class &quot;org.slf4j.impl.StaticLoggerBinder&quot;.
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Starting ChromeDriver 83.0.4103.39 (ccbf011cb2d2b19b506d844400483861342c20cd-refs/branch-heads/4103@{#416}) on port 21703
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+Jul 05, 2020 6:34:23 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+</system-err>
+  </testcase>
+  <testcase classname="testcases.SanityTest" name="Sheet1" time="0">
+    <skipped/>
+    <system-out>2020-07-05 18:34:54--INFO -testcases.SanityTest-main:Data set=2
+</system-out>
+  </testcase>
 </testsuite>

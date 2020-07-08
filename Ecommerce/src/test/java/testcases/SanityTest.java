@@ -6,9 +6,6 @@ import org.apache.log4j.Logger;
 import org.testng.SkipException;
 import org.testng.annotations.Test;
 
-import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.Status;
-
 import pagefactory.Login;
 import reportutil.ExtenReport;
 import testBase.TestBase;
@@ -36,14 +33,15 @@ public class SanityTest extends TestBase{
 	@Test(priority=1,dataProvider="myData")
 	public void Sheet1(Map<String, String> testData){
 		dataSet++;
-		log.info("Data set="+dataSet);
+		log.info("MGData set="+dataSet);
 		if(!testData.get("DataToRun").equalsIgnoreCase("Y")){
 			throw new SkipException("DataToRun for row number "+dataSet+" is No or Blank, "
 					+ "Hence skipping execution for this data set");
 		}
 		log.info("Executing Data set number = "+dataSet);	
 		test = ExtenReport.getExtentTest(new Object(){}.getClass().getEnclosingMethod().getName());
-		Login app = new Login(driver,test);
+		//Login app = new Login(driver,test);
+		Login app = new Login();
 		app.loginApp(testData.get("UserName"), testData.get("Password"));
 		app.logoutApp();
 		log.info("Login test case executed successfully");
@@ -55,7 +53,7 @@ public class SanityTest extends TestBase{
 	@Test(priority=2,dependsOnMethods={"sanityTest"})
 	public void addItemIntoCart(){
 		test = ExtenReport.getExtentTest(new Object(){}.getClass().getEnclosingMethod().getName());
-		Index index = new Index(driver,test);
+		Index index = new Index();
 		index.addItemIntoCart();
 		test.log(Status.PASS, "Item added to cart Successfully");
 		log.info("Item added to cart Successfully");

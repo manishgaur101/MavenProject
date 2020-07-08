@@ -17,22 +17,22 @@ import com.aventstack.extentreports.Status;
 
 import constants.FilePath;
 import reportutil.ExtenReport;
+import testBase.TestBase;
 
-public class SeleniumUtil {
+public class SeleniumUtil extends TestBase {
 
-	
-	public void click(WebDriver driver,WebElement element,SeleniumUtil selUtil,String elementName,ExtentTest test){
+			public void click(WebElement element,String elementName){
 		try{
 		element.click();
 		test.log(Status.PASS, "Clicked on "+elementName);
 		}catch(Exception e){
 			test.log(Status.FAIL, "Error in clicking on "+elementName);
-			takeScreenshotandAttachInReport(driver, test);
+			takeScreenshotandAttachInReport();
 			
 		}
 	}
 	
-	public void sendKeys(SeleniumUtil selUtil,WebDriver driver,WebElement element,String elementName,String data,ExtentTest test){
+			public void sendKeys(WebElement element,String elementName,String data){
 		try{
 		element.clear();
 		element.sendKeys(data);
@@ -40,25 +40,25 @@ public class SeleniumUtil {
 		}
 		catch(Exception e){
 			test.log(Status.FAIL, elementName+" is not found");
-			selUtil.takeScreenshotandAttachInReport(driver, test);
+			takeScreenshotandAttachInReport();
 			
 		}
 		
 		
 		
 	}
-	public void moveToElement(WebDriver driver,List<WebElement> element,SeleniumUtil selUtil,int index,ExtentTest test){
+			public void moveToElement(List<WebElement> element,int index){
 		String elementName = "";
 		try{
 			
-			elementName = selUtil.getText(element, index);
+			elementName = getText(element, index);
 		Actions actions = new Actions(driver);
 		actions.moveToElement(element.get(index)).perform();
 		test.log(Status.PASS, "Mouse Hover on Element " +elementName);
 		}
 		catch(Exception e){
 			test.log(Status.FAIL, "Mouse Hover on Element "+elementName+ "Failed");
-			selUtil.takeScreenshotandAttachInReport(driver, test);
+			takeScreenshotandAttachInReport();
 			
 		}
 	}
@@ -67,7 +67,12 @@ public class SeleniumUtil {
 		return element.get(index).getText();
 	}
 	
-	public void takeScreenshotandAttachInReport(WebDriver driver,ExtentTest test){
+	/**
+     * This method will take a Screenshot of the screen
+     * 
+     * @author Manish.Gaur
+     */
+	public void takeScreenshotandAttachInReport(){
 		File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		try {
 			String path = FilePath.SCREEN_SHOT+File.separator+ExtenReport.DateFormatter()+"_image.png";
@@ -79,7 +84,7 @@ public class SeleniumUtil {
 		}
 		}
 	
-	public void scrollTillElement(WebDriver driver,WebElement element){
+	public void scrollTillElement(WebElement element){
 		
 	}
 }

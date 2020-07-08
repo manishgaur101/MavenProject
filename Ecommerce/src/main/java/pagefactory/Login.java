@@ -14,10 +14,10 @@ import testBase.TestBase;
 
 public class Login extends TestBase{
 
-	ExtentTest test = null;
 	SeleniumUtil selUtil = new SeleniumUtil();
-	WebDriver driver;
+	
 	Logger log = Logger.getLogger(Login.class);
+	
 	@FindBy(xpath = "//a[@title='Log in to your customer account']")
 	WebElement sign_in_button;
 	
@@ -33,40 +33,37 @@ public class Login extends TestBase{
 	@FindBy(xpath = "//a[@title='Log me out']")
 	WebElement logout_button;
 	
-	public Login(WebDriver driver,ExtentTest test){
-		
+		public Login(){
 		PageFactory.initElements(driver, this);
-		this.test = test;
-		this.driver = driver;
 	}
 	
 	public void loginApp(String userName, String password){
 		try{
 			
-		selUtil.click(driver,sign_in_button,selUtil, "signin button", test);
-		selUtil.sendKeys(selUtil,driver,email_text_box, "Email address", userName, test);
-		selUtil.sendKeys(selUtil,driver,password_text_box, "Password", password, test);
-		selUtil.takeScreenshotandAttachInReport(driver, test);
-		selUtil.click(driver,submit_button,selUtil, "Submit Button", test);
+		selUtil.click(sign_in_button,"signin button");
+		selUtil.sendKeys(email_text_box, "Email address", userName);
+		selUtil.sendKeys(password_text_box, "Password", password);
+		selUtil.takeScreenshotandAttachInReport();
+		selUtil.click(submit_button, "Submit Button");
 		test.log(Status.PASS, "Login Successful");
 		
 		}catch(Exception e){
 			log.error(e);
 			test.log(Status.FAIL, "Login to application failed");
-			selUtil.takeScreenshotandAttachInReport(driver, test);
+			selUtil.takeScreenshotandAttachInReport();
 		}
 	}
 	
 	public void logoutApp(){
 		try{
 			
-		selUtil.click(driver,logout_button,selUtil, "logout button", test);
+		selUtil.click(logout_button, "logout button");
 		
 		
 		}catch(Exception e){
 			log.error(e);
 			test.log(Status.FAIL, "Logout from application failed");
-			selUtil.takeScreenshotandAttachInReport(driver, test);
+			selUtil.takeScreenshotandAttachInReport();
 		}
 	}
 }

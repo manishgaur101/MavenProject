@@ -11,12 +11,11 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 
 import commonutil.SeleniumUtil;
+import testBase.TestBase;
 
-public class Index {
+public class Index extends TestBase {
 
-	WebDriver driver;
 	SeleniumUtil selUtil = new SeleniumUtil();
-	ExtentTest test = null;
 
 	@FindBy(linkText = "Women")
 	WebElement Women_tab;
@@ -30,22 +29,24 @@ public class Index {
 	@FindBy(xpath = "//a[@title='Proceed to checkout']")
 	WebElement Proceed_to_checkout;
 
-	public Index(WebDriver driver, ExtentTest test) {
-		this.driver = driver;
+	public Index() {
+		
 		PageFactory.initElements(driver, this);
-		this.test = test;
 
 	}
 
 	public void addItemIntoCart() {
 		try {
 			Women_tab.click();
-			selUtil.moveToElement(driver, Woman_items_lists, selUtil, 0, test);
-			selUtil.click(driver,addToCart_button,selUtil,"add to cart button", test);
-			selUtil.click(driver,Proceed_to_checkout, selUtil,"Proceed to checkout button", test);
+			//selUtil.moveToElement(driver, Woman_items_lists, selUtil, 0, test);
+			selUtil.moveToElement(Woman_items_lists, 0);
+			/*selUtil.click(driver,addToCart_button,selUtil,"add to cart button", test);
+			selUtil.click(driver,Proceed_to_checkout, selUtil,"Proceed to checkout button", test);*/
+			selUtil.click(addToCart_button,"add to cart button");
+			selUtil.click(Proceed_to_checkout,"Proceed to checkout button");
 		} catch (Exception e) {
 			test.log(Status.FAIL, "Item did not add to cart");
-			selUtil.takeScreenshotandAttachInReport(driver, test);
+			selUtil.takeScreenshotandAttachInReport();
 
 		}
 	}
