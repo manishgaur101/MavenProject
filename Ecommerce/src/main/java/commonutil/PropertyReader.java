@@ -8,7 +8,7 @@ import java.util.Properties;
 
 public class PropertyReader {
 
-	public String ReadPropertyFile(String propertyFileName, String propertyKey) {
+	public String getValue(String propertyFileName, String propertyKey) {
 		String keyValue = "";
 		try {
 			File file = new File(propertyFileName);

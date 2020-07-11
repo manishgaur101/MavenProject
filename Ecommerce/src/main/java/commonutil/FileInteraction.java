@@ -6,7 +6,7 @@ import java.util.HashMap;
 
 import org.apache.log4j.Logger;
 
-import testcases.SanityTest;
+import testcases.ui.SanityTest;
 
 public class FileInteraction {
 

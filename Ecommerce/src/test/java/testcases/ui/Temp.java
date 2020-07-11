@@ -1,4 +1,4 @@
-package testcases;
+package testcases.ui;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;

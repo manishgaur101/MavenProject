@@ -1,4 +1,4 @@
-package testcases;
+package testcases.ui;
 
 import java.util.Map;
 
@@ -30,8 +30,8 @@ public class SanityTest extends TestBase{
 		
 	}*/
 	
-	@Test(priority=1,dataProvider="myData")
-	public void Sheet1(Map<String, String> testData){
+	/*@Test(priority=1,dataProvider="myData",testName="TC001")
+	public void validLoginTest(Map<String, String> testData){
 		dataSet++;
 		log.info("MGData set="+dataSet);
 		if(!testData.get("DataToRun").equalsIgnoreCase("Y")){
@@ -43,6 +43,26 @@ public class SanityTest extends TestBase{
 		//Login app = new Login(driver,test);
 		Login app = new Login();
 		app.loginApp(testData.get("UserName"), testData.get("Password"));
+		app.logoutApp();
+		log.info("Login test case executed successfully");
+		
+	}*/
+	
+	@Test(priority=1,dataProvider="myData")
+	public void Sheet1(Map<String, String> testData){
+		//MongoConnect mongo = new MongoConnect("ecommerce", "logindetails");
+		//dataSet++;
+		//log.info("MGData set="+dataSet);
+		//if(!testData.get("DataToRun").equalsIgnoreCase("Y")){
+			//throw new SkipException("DataToRun for row number "+dataSet+" is No or Blank, "
+				//	+ "Hence skipping execution for this data set");
+		//}
+		//log.info("Executing Data set number = "+dataSet);	
+		test = ExtenReport.getExtentTest(new Object(){}.getClass().getEnclosingMethod().getName());
+		//Login app = new Login(driver,test);
+		Login app = new Login();
+		
+		app.loginApp(testData.get("username"), testData.get("password"));
 		app.logoutApp();
 		log.info("Login test case executed successfully");
 		

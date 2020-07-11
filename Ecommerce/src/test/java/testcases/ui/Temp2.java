@@ -1,4 +1,4 @@
-package testcases;
+package testcases.ui;
 
 import java.util.HashMap;
 import java.util.Map;

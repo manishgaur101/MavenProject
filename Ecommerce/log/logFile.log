@@ -624,3 +624,44 @@
 2020-07-08 11:31:52--DEBUG-org.apache.http.wire-main: << "}"
 2020-07-08 11:31:52--DEBUG-org.apache.http.impl.conn.BasicClientConnectionManager-main:Releasing connection org.apache.http.impl.conn.ManagedClientConnectionImpl@ed3068a
 2020-07-08 11:31:52--DEBUG-org.apache.http.impl.conn.BasicClientConnectionManager-main:Connection can be kept alive indefinitely
+2020-07-09 01:56:43--INFO -testcases.SanityTest-main:MGData set=1
+2020-07-09 01:56:43--INFO -testcases.SanityTest-main:MGData set=2
+2020-07-09 02:24:21--INFO -testcases.SanityTest-main:MGData set=1
+2020-07-09 02:24:21--INFO -testcases.SanityTest-main:Executing Data set number = 1
+2020-07-09 02:24:43--INFO -testcases.SanityTest-main:Login test case executed successfully
+2020-07-09 02:24:43--INFO -testcases.SanityTest-main:MGData set=2
+2020-07-10 17:38:53--INFO -testcases.ui.SanityTest-main:Login test case executed successfully
+2020-07-10 17:48:16--ERROR-pagefactory.Login-main:org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=83.0.4103.116)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'HO-GDC-SIG64', ip: '192.168.29.159', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_251'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.116, chrome: {chromedriverVersion: 83.0.4103.39 (ccbf011cb2d2b..., userDataDir: C:\Users\MANISH~1.GAU\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:57732}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: ad4e1e5df45f79eaa2d41416d888390f
+2020-07-10 17:53:00--INFO -testcases.ui.SanityTest-main:Login test case executed successfully
+2020-07-10 17:53:39--INFO -testcases.ui.SanityTest-main:Login test case executed successfully
+2020-07-10 18:54:44--INFO -testcases.ui.SanityTest-main:Login test case executed successfully
+2020-07-10 18:55:44--INFO -testcases.ui.SanityTest-main:Login test case executed successfully
+2020-07-10 19:06:43--INFO -testcases.ui.SanityTest-main:Login test case executed successfully
+2020-07-10 19:07:51--INFO -testcases.ui.SanityTest-main:Login test case executed successfully
+2020-07-10 20:43:40--INFO -testcases.ui.SanityTest-main:Login test case executed successfully
+2020-07-10 20:44:56--INFO -testcases.ui.SanityTest-main:Login test case executed successfully
+2020-07-10 21:09:17--ERROR-pagefactory.Login-main:org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=83.0.4103.116)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'HO-GDC-SIG64', ip: '192.168.29.159', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_251'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.116, chrome: {chromedriverVersion: 83.0.4103.39 (ccbf011cb2d2b..., userDataDir: C:\Users\MANISH~1.GAU\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:65515}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 9886f514a7bc1d47bf90c005cbfd71a5
+2020-07-10 21:09:17--ERROR-pagefactory.Login-main:org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=83.0.4103.116)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'HO-GDC-SIG64', ip: '192.168.29.159', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_251'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.116, chrome: {chromedriverVersion: 83.0.4103.39 (ccbf011cb2d2b..., userDataDir: C:\Users\MANISH~1.GAU\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:65515}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 9886f514a7bc1d47bf90c005cbfd71a5
+2020-07-10 21:13:44--INFO -testcases.ui.SanityTest-main:Login test case executed successfully
+2020-07-10 21:14:39--INFO -testcases.ui.SanityTest-main:Login test case executed successfully

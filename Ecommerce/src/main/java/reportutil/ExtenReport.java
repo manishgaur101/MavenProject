@@ -26,8 +26,8 @@ public class ExtenReport {
         ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter(Report_path);
         
         PropertyReader prop = new PropertyReader();
-        String report_title = prop.ReadPropertyFile(FilePath.ENV_PROPERTIES, "reportDocumentTitle");
-        String report_name = prop.ReadPropertyFile(FilePath.ENV_PROPERTIES, "reportName");
+        String report_title = prop.getValue(FilePath.ENV_PROPERTIES, "reportDocumentTitle");
+        String report_name = prop.getValue(FilePath.ENV_PROPERTIES, "reportName");
         
         htmlReporter.config().setDocumentTitle(report_title);
         htmlReporter.config().setReportName(report_name);

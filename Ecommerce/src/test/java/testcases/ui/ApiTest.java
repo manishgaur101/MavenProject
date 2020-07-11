@@ -1,4 +1,4 @@
-package testcases;
+package testcases.ui;
 
 import static io.restassured.RestAssured.given;
 

@@ -1,17 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="23107" started-at="2020-07-06T12:41:58Z" finished-at="2020-07-06T12:42:21Z">
+  <suite name="Default suite" duration-ms="80808" started-at="2020-07-10T15:43:24Z" finished-at="2020-07-10T15:44:45Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="23107" started-at="2020-07-06T12:41:58Z" finished-at="2020-07-06T12:42:21Z">
-      <class name="testcases.sameOrigin">
-        <test-method status="PASS" signature="f()[pri:0, instance:testcases.sameOrigin@2d209079]" name="f" duration-ms="23074" started-at="2020-07-06T18:11:58Z" finished-at="2020-07-06T18:12:21Z">
+    <test name="Default test" duration-ms="80808" started-at="2020-07-10T15:43:24Z" finished-at="2020-07-10T15:44:45Z">
+      <class name="testcases.ui.SanityTest">
+        <test-method status="PASS" signature="Sheet1(java.util.Map)[pri:0, instance:testcases.ui.SanityTest@5a2d131d]" name="Sheet1" duration-ms="18537" started-at="2020-07-10T21:13:26Z" data-provider="myData" finished-at="2020-07-10T21:13:44Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{_id={$oid=5f06c8977a26569e9de2c5c1}, username=mgaur000@gmail.com, password=ABC123}]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- f -->
-      </class> <!-- testcases.sameOrigin -->
+        </test-method> <!-- Sheet1 -->
+        <test-method status="PASS" signature="Sheet1(java.util.Map)[pri:0, instance:testcases.ui.SanityTest@5a2d131d]" name="Sheet1" duration-ms="54410" started-at="2020-07-10T21:13:44Z" data-provider="myData" finished-at="2020-07-10T21:14:39Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{_id={$oid=5f06c8c87a26569e9de2c5c2}, username=mgaur101gmail.com, password=XYZ22}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Sheet1 -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:testcases.ui.SanityTest@5a2d131d]" name="tearDown" is-config="true" duration-ms="6382" started-at="2020-07-10T21:14:39Z" finished-at="2020-07-10T21:14:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- testcases.ui.SanityTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -1,4 +1,4 @@
-package testcases;
+package testcases.ui;
 
 import java.io.File;
 import java.io.FileInputStream;
