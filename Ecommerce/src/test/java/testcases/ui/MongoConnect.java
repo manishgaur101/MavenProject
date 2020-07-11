@@ -192,10 +192,12 @@ public class MongoConnect {
 	 */
 	public List<Document> findallSortwithLimit(String key, int sortValue, int limit) {
 		int limitValue = 0;
-		if (limit < 0) {
+		if (limit <= 0) {
 			limitValue = 1;
 
 		}
+		else
+			limitValue = limit;
 		BasicDBObject db = new BasicDBObject(key, sortValue);
 		FindIterable<Document> Iterable = mongoCollection.find().sort(db).limit(limitValue);
 		List<Document> result = new ArrayList<Document>();
@@ -216,9 +218,11 @@ public class MongoConnect {
 	 */
 	public List<Document> findallwithLimit(int limit) {
 		int limitValue = 0;
-		if (limit < 0) {
+		if (limit <= 0) {
 			limitValue = 1;
 		}
+		else
+			limitValue = limit;
 		FindIterable<Document> Iterable = mongoCollection.find().limit(limitValue);
 		List<Document> result = new ArrayList<Document>();
 
@@ -525,7 +529,7 @@ public class MongoConnect {
 		MongoConnect mongo = new MongoConnect("ecommerce", "logindetails");
 		// System.out.println(mongo.search("username", "eq",
 		// "mgaur101gmail.com"));
-		System.out.println(mongo.findallwithLimit(1));
+		System.out.println(mongo.findallwithLimit(0));
 
 	}
 
