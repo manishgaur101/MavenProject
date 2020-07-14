@@ -38,10 +38,15 @@ public class TestBase {
 	
 	@DataProvider(name="myData")
 	public Object[][] dataProvider(Method method){
-		MongoConnect mongo = new MongoConnect("ecommerce", "logindetails");
+		MongoConnect mongo = null;
+		if(method.getName().equalsIgnoreCase("Sheet1")){
+		mongo = new MongoConnect("ecommerce", "logindetails");
 		//return mongo.getMapDataFromMongo();
-		return mongo.getMapDataFromMongoDB();
+		
+		//return mongo.getResultOfQuery(listDoc);
 		}
+		return mongo.getResult();
+	}
 	
 	@AfterTest
 	public void tearDown(){

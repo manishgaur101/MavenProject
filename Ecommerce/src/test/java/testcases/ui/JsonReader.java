@@ -9,7 +9,13 @@ import io.restassured.path.json.JsonPath;
 
 public class JsonReader {
 
-	
+	/**
+	 * Method to return Map from Json String
+	 * 
+	 * @param jsonString
+	 * @return
+	 * 		Map<String,String> - Json String converted into Map and returned
+	 */
 	
 	static public Map<String,String> getJsonObjects(String jsonString){
 		Map<String, String> map  = new HashMap<String,String>();

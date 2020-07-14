@@ -665,3 +665,7 @@ Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 8
 Session ID: 9886f514a7bc1d47bf90c005cbfd71a5
 2020-07-10 21:13:44--INFO -testcases.ui.SanityTest-main:Login test case executed successfully
 2020-07-10 21:14:39--INFO -testcases.ui.SanityTest-main:Login test case executed successfully
+2020-07-14 17:58:06--INFO -testcases.ui.SanityTest-main:Login test case executed successfully
+2020-07-14 17:58:43--INFO -testcases.ui.SanityTest-main:Login test case executed successfully
+2020-07-14 18:56:56--INFO -testcases.ui.SanityTest-main:Login test case executed successfully
+2020-07-14 18:57:31--INFO -testcases.ui.SanityTest-main:Login test case executed successfully

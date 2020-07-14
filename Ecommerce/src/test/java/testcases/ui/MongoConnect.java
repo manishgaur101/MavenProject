@@ -39,6 +39,7 @@ public class MongoConnect {
 	/** Operator inside find query of a Mongo Document */
 	private String operator;
 
+	private Object[][] mongoData;
 	/**
 	 * No argument constructor of MongoClient class
 	 * 
@@ -234,19 +235,19 @@ public class MongoConnect {
 	}
 
 	/**
-	 * Method Find all the documents present inside a collection
+	 * This Method Find all the documents present inside a collection
 	 * 
 	 * @return List of String where Every String holds a document's json
 	 * 
 	 * @author manish.gaur
 	 */
-	public List<String> getDataAsList() {
-		List<String> result = new ArrayList<>();
+	public List<Document> getDataAsList() {
+		List<Document> result = new ArrayList<>();
 		// Document query = new Document();
 		FindIterable<Document> iterDoc = mongoCollection.find();
 
 		for (Document doc : iterDoc) {
-			result.add(doc.toJson());
+			result.add(doc);
 		}
 		return result;
 
@@ -282,7 +283,7 @@ public class MongoConnect {
 		mongoDatabase = client.getDatabase(Database);
 	}
 
-	/**
+	/** Not in use
 	 * Method to construct a Map of username and password
 	 * 
 	 * @return username and password in Object[][]
@@ -293,13 +294,13 @@ public class MongoConnect {
 		int result_size = getDataAsList().size();
 		Object[][] data = new Object[result_size][1];
 		int row = 0;
-		for (String jsonObject : getDataAsList()) {
+		for (Document jsonObject : getDataAsList()) {
 			datamap = new HashMap<>();
-			String username = (String) JsonReader.getJsonData(jsonObject, "username");
-			String password = (String) JsonReader.getJsonData(jsonObject, "password");
+			String username = (String) JsonReader.getJsonData(jsonObject.toJson(), "username");
+			String password = (String) JsonReader.getJsonData(jsonObject.toJson(), "password");
 			System.out.println(username + "--" + password);
 
-			datamap = JsonReader.getJsonObjects(jsonObject);
+			datamap = JsonReader.getJsonObjects(jsonObject.toJson());
 			data[row][0] = datamap;
 			row++;
 
@@ -307,29 +308,7 @@ public class MongoConnect {
 		return data;
 	}
 
-	/**
-	 * This method will set the map data into Object[][]
-	 * 
-	 * @return Object[][] where it holds the mongo doucment data inform as Map
-	 *         type
-	 */
-
-	public Object[][] getMapDataFromMongoDB() {
-		Map<String, String> datamap;
-		int result_size = getDataAsList().size();
-		Object[][] data = new Object[result_size][1];
-		int row = 0;
-		for (String jsonObject : getDataAsList()) {
-
-			datamap = new HashMap<>();
-			datamap = JsonReader.getJsonObjects(jsonObject);
-			data[row][0] = datamap;
-			row++;
-
-		}
-		return data;
-	}
-
+	
 	/**
 	 * Method to run MongoQuery having Condition
 	 * 
@@ -444,6 +423,7 @@ public class MongoConnect {
 		return result;
 
 	}
+	
 
 	/**
 	 * Method to run MongoQuery having Condition, sort and limit
@@ -506,12 +486,62 @@ public class MongoConnect {
 
 	}
 
+	/**
+	 * METHOD to close MongoClient connection
+	 */
 	public void mongoClientClose() {
 		if (client != null)
 			client.close();
 
 	}
 
+	/**
+	 * Method to get results of any query of mongo in Object[][]
+	 * @param listDoc
+	 * @return
+	 * 	    Object[][] - Set the query result in form of map into Object[][] and return it		
+	 * 
+	 */
+	public Object[][] getResultOfQuery(List<Document> listDoc){
+		Map<String, String> datamap;
+		int result_size = listDoc.size();
+		Object[][] data = new Object[result_size][1];
+		int row = 0;
+		for (Document jsonObject : listDoc) {
+			datamap = new HashMap<>();
+			datamap = JsonReader.getJsonObjects(jsonObject.toJson());
+			data[row][0] = datamap;
+			row++;
+
+		}
+		return data;
+	}
+	
+	/**
+	 * This method will set the map data into Object[][] and return all the data of Collection
+	 * 
+	 * @return Object[][] where it holds the mongo doucment data inform as Map
+	 *         type
+	 */
+
+	public Object[][] getResult() {
+		Map<String, String> datamap;
+		int result_size = getDataAsList().size();
+		Object[][] data = new Object[result_size][1];
+		
+		int row = 0;
+		for (Document jsonObject : getDataAsList()) {
+		
+			datamap = new HashMap<>();
+			datamap = JsonReader.getJsonObjects(jsonObject.toJson());
+			data[row][0] = datamap;
+			row++;
+
+		}
+		return data;
+	}
+
+	
 	public static void main(String[] args) {
 		/*
 		 * Mongo mongo = new Mongo("ecommerce", "logindetails"); Map<String,
@@ -529,7 +559,7 @@ public class MongoConnect {
 		MongoConnect mongo = new MongoConnect("ecommerce", "logindetails");
 		// System.out.println(mongo.search("username", "eq",
 		// "mgaur101gmail.com"));
-		System.out.println(mongo.findallwithLimit(0));
+		System.out.println(mongo.findallwithLimit(2));
 
 	}
 
