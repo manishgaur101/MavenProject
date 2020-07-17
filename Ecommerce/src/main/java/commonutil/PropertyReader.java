@@ -8,6 +8,15 @@ import java.util.Properties;
 
 public class PropertyReader {
 
+	/**
+	 * Method to get the value of the Property File
+	 * 
+	 * @param propertyFileName
+	 * @param 
+	 * 		propertyKey - Key in String form
+	 * @return
+	 * 		String - value of the key from property file
+	 */
 	public String getValue(String propertyFileName, String propertyKey) {
 		String keyValue = "";
 		try {

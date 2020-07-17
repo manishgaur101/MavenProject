@@ -47,7 +47,17 @@ public class TestBase {
 		}
 		return mongo.getResult();
 	}
-	
+	/*@DataProvider(name="dataFromMongo")
+	public Object[][] dataProviderMongo(Method method){
+		MongoConnect mongo = null;
+		if(method.getName().equalsIgnoreCase("Sheet1")){
+		mongo = new MongoConnect("ecommerce", "logindetails");
+		//return mongo.getMapDataFromMongo();
+		
+		//return mongo.getResultOfQuery(listDoc);
+		}
+		return mongo.getResult();
+	}*/
 	@AfterTest
 	public void tearDown(){
 		ExtenReport.writeReport();

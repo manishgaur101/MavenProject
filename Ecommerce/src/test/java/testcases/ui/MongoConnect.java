@@ -24,6 +24,7 @@ import constants.FilePath;
  */
 public class MongoConnect {
 
+
 	private MongoClient client;
 
 	private MongoDatabase mongoDatabase;
@@ -40,6 +41,8 @@ public class MongoConnect {
 	private String operator;
 
 	private Object[][] mongoData;
+	
+	private Document query ;
 	/**
 	 * No argument constructor of MongoClient class
 	 * 
@@ -73,6 +76,13 @@ public class MongoConnect {
 		mongoCollection = getCollection(mongoDatabase, collection);
 	}
 
+	public Document getQuery() {
+		return query;
+	}
+
+	public void setQuery(Document query) {
+		this.query = query;
+	}
 	public String getFieldName() {
 		return fieldName;
 	}
@@ -167,13 +177,13 @@ public class MongoConnect {
 	/**
 	 * Method to find all documents and then sort
 	 * 
-	 * @param key
+	 * @param fieldName
 	 * @param sortValue
 	 * @return List<Document> - Result of query in form of a List
 	 */
 
-	public List<Document> findallAndSort(String key, int sortValue) {
-		BasicDBObject db = new BasicDBObject(key, sortValue);
+	public List<Document> findallAndSort(String fieldName, int sortValue) {
+		BasicDBObject db = new BasicDBObject(fieldName, sortValue);
 		FindIterable<Document> Iterable = mongoCollection.find().sort(db);
 		List<Document> result = new ArrayList<Document>();
 
@@ -187,11 +197,11 @@ public class MongoConnect {
 	/**
 	 * Method to find all documents then applying Sorting and Limit
 	 * 
-	 * @param key
+	 * @param fieldName
 	 * @param sortValue
 	 * @return List<Document> - Result of query in form of a List
 	 */
-	public List<Document> findallSortwithLimit(String key, int sortValue, int limit) {
+	public List<Document> findallSortwithLimit(String fieldName, int sortValue, int limit) {
 		int limitValue = 0;
 		if (limit <= 0) {
 			limitValue = 1;
@@ -199,8 +209,8 @@ public class MongoConnect {
 		}
 		else
 			limitValue = limit;
-		BasicDBObject db = new BasicDBObject(key, sortValue);
-		FindIterable<Document> Iterable = mongoCollection.find().sort(db).limit(limitValue);
+		BasicDBObject db = new BasicDBObject(fieldName, sortValue);
+		FindIterable<Document> Iterable = mongoCollection.find().sort(db).limit(limitValue); 
 		List<Document> result = new ArrayList<Document>();
 
 		for (Document doc : Iterable) {
@@ -209,6 +219,8 @@ public class MongoConnect {
 		}
 		return result;
 	}
+	
+	
 
 	/**
 	 * Method to find all documents then applying Limit
@@ -268,6 +280,7 @@ public class MongoConnect {
 	public MongoConnect(String database, String collection) {
 		mongoConnect(database);
 		mongoCollection = getCollection(mongoDatabase, collection);
+		query = new Document();
 
 	}
 
@@ -296,8 +309,8 @@ public class MongoConnect {
 		int row = 0;
 		for (Document jsonObject : getDataAsList()) {
 			datamap = new HashMap<>();
-			String username = (String) JsonReader.getJsonData(jsonObject.toJson(), "username");
-			String password = (String) JsonReader.getJsonData(jsonObject.toJson(), "password");
+			String username = (String) JsonReader.getJsonDataUsingJsonFilePath(jsonObject.toJson(), "username");
+			String password = (String) JsonReader.getJsonDataUsingJsonFilePath(jsonObject.toJson(), "password");
 			System.out.println(username + "--" + password);
 
 			datamap = JsonReader.getJsonObjects(jsonObject.toJson());
@@ -320,11 +333,12 @@ public class MongoConnect {
 
 	public List<Document> search(String fieldname, String operator, Object value) {
 		List<Document> result = new ArrayList<>();
-		Document query = new Document();
+		//Document query = new Document();
+		//query = new Document();
 		this.fieldName = fieldName;
 		this.fieldValue = value;
 		this.operator = operator;
-		switch (operator.toUpperCase()) {
+		/*switch (operator.toUpperCase()) {
 		case "EQ":
 			query.append(fieldname, new Document().append("$eq", value));
 			break;
@@ -352,7 +366,7 @@ public class MongoConnect {
 		default:
 			break;
 		}
-
+*/
 		FindIterable<Document> iterable = mongoCollection.find(query);
 		if (iterable != null) {
 			for (Document doc : iterable) {
@@ -363,6 +377,63 @@ public class MongoConnect {
 
 		return result;
 
+	}
+	
+	
+	public List<Document> searchCondition(Document query) {
+		List<Document> result = new ArrayList<>();
+		FindIterable<Document> iterable = mongoCollection.find(query);
+		if (iterable != null) {
+			for (Document doc : iterable) {
+				result.add(doc);
+
+			}
+		}
+
+		return result;
+
+	}
+	
+	/**
+	 * Method to clear Document Object
+	 * 
+	 */
+	
+	public void clear(){
+		query.clear();
+	}
+	
+	
+public Document condition(String fieldname, String operator, Object value){
+	switch (operator.toUpperCase()) {
+	case "EQ":
+		query.append(fieldname, new Document().append("$eq", value));
+		break;
+	case "NE":
+		query.append(fieldname, new Document().append("$ne", value));
+		break;
+	case "GT":
+		query.append(fieldname, new Document().append("$gt", value));
+		break;
+	case "GTE":
+		query.append(fieldname, new Document().append("$gte", value));
+		break;
+	case "LT":
+		query.append(fieldname, new Document().append("$lt", value));
+		break;
+	case "LTE":
+		query.append(fieldname, new Document().append("$lte", value));
+		break;
+	case "IN":
+		query.append(fieldname, new Document().append("$in", value));
+		break;
+	case "NIN":
+		query.append(fieldname, new Document().append("$nin", value));
+		break;
+	default:
+		break;
+	}
+	return query;
 	}
 
 	/**
@@ -423,6 +494,53 @@ public class MongoConnect {
 		return result;
 
 	}
+	
+	public List<Document> searchConditionwithSort(Document query, String sortKey, int sortValue) {
+		List<Document> result = new ArrayList<>();
+		BasicDBObject sortQuery = new BasicDBObject(sortKey, sortValue);
+			FindIterable<Document>iterable = mongoCollection.find(query).sort(sortQuery);
+		if (iterable != null) {
+			for (Document doc : iterable) {
+				result.add(doc);
+			}
+		}
+		return result;
+	}
+	
+	
+	public List<Document> searchConditionwithSortandLimit(Document query, String sortKey, int sortValue,int limit){
+		
+		List<Document> result = new ArrayList<>();
+		BasicDBObject sortQuery = new BasicDBObject(sortKey, sortValue);
+		
+			FindIterable<Document>iterable = mongoCollection.find(query).sort(sortQuery).limit(limit);
+		if (iterable != null) {
+			for (Document doc : iterable) {
+				result.add(doc);
+
+			}
+		}
+
+		return result;
+
+	}
+	
+public List<Document> searchConditionwithLimit(Document query,int limit){
+		
+		List<Document> result = new ArrayList<>();
+		
+			FindIterable<Document>iterable = mongoCollection.find(query).limit(limit);
+		if (iterable != null) {
+			for (Document doc : iterable) {
+				result.add(doc);
+
+			}
+		}
+
+		return result;
+
+	}
+
 	
 
 	/**
@@ -490,12 +608,15 @@ public class MongoConnect {
 	 * METHOD to close MongoClient connection
 	 */
 	public void mongoClientClose() {
-		if (client != null)
+		if (client != null){
 			client.close();
-
+			query.clear();
+		}
 	}
+	
+	
 
-	/**
+	/** Method to be used with DataProvider
 	 * Method to get results of any query of mongo in Object[][]
 	 * @param listDoc
 	 * @return
@@ -517,10 +638,10 @@ public class MongoConnect {
 		return data;
 	}
 	
-	/**
+	/** This method to be used with DataProvider
 	 * This method will set the map data into Object[][] and return all the data of Collection
 	 * 
-	 * @return Object[][] where it holds the mongo doucment data inform as Map
+	 * @return Object[][] where it holds the mongo document data inform as Map
 	 *         type
 	 */
 

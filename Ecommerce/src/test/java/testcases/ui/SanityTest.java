@@ -50,6 +50,12 @@ public class SanityTest extends TestBase{
 	
 	@Test(priority=1,dataProvider="myData")
 	public void Sheet1(Map<String, String> testData){
+		
+		//------------>Mongo Data - Get the data from mongo and add it in testData Map
+		//------------>SQL Data  - Get the data from SQL and add it in testData Map
+		//------------>Excel Sheet Data
+		//------------>SQL Data
+		
 		//MongoConnect mongo = new MongoConnect("ecommerce", "logindetails");
 		//dataSet++;
 		//log.info("MGData set="+dataSet);

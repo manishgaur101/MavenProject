@@ -15,4 +15,6 @@ public interface FilePath {
 	String LOG4J_XML = TEST_RESOURCE_PACKAGE+File.separator+"Log4j.xml";
 	String Excel_File_Path = TEST_RESOURCE_PACKAGE+File.separator+"TestData"+File.separator+"MGTest.xlsx";
 	String csv_File_Path = TEST_RESOURCE_PACKAGE+File.separator+"TestData"+File.separator+"userLogin.csv";
+	String json_file = TEST_RESOURCE_PACKAGE +File.separator+"TestData"+File.separator+"employee.json";
+	String jsonPath_file = TEST_RESOURCE_PACKAGE +File.separator+"TestData"+File.separator+"empjson.properties";
 }

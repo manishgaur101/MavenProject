@@ -1,12 +1,11 @@
 package commonutil;
 
-import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.RandomAccessFile;
-import java.util.HashMap;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 import org.apache.log4j.Logger;
-
-import testcases.ui.SanityTest;
 
 public class FileInteraction {
 
@@ -20,6 +19,12 @@ public class FileInteraction {
 		
 	}
 	
+	
+	/**
+	 * Method to print text file content
+	 * 
+	 * @author Manish.Gaur
+	 */
 	public void readTextFile(){
 		try {
 			RandomAccessFile file = new RandomAccessFile(path,"r");
@@ -31,7 +36,6 @@ public class FileInteraction {
 			}
 			file.close();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -40,6 +44,25 @@ public class FileInteraction {
 	public void readCSV(){
 		
 			
+		
+	}
+	
+	/**
+	 * Method to convert file Content into String
+	 * 
+	 * @param
+	 * 		file is path of the file whose data needs to be converted into String
+	 * @return
+	 * 		String - conversion of the given File
+	 */
+	
+	public static String readFileToString(String file ){
+		String StringFile = "";
+		try {
+		return new String(Files.readAllBytes(Paths.get(file)));
+	} catch (IOException e) {
+		return StringFile;
+	}
 		
 	}
 

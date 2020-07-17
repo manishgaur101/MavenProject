@@ -45,6 +45,7 @@ public class ApiTest {
 	}
 	
 	public static String payload(){
+		// returning hard coded json string
 		return "{\r\n" + 
 				"   \"title\":\"foo\",\r\n" + 
 				"   \"body\":\"bar\",\r\n" + 
